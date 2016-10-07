@@ -7,7 +7,7 @@ import android.hardware.fingerprint.FingerprintManager;
  * Created by Keval on 07-Oct-16.
  * This is the callback listener to notify the finger print authentication result to the parent.
  *
- * @author {@link 'https://github.com/kevalpatel2106'}
+ * @author 'https://github.com/kevalpatel2106'
  */
 
 public interface FingerPrintAuthCallback {

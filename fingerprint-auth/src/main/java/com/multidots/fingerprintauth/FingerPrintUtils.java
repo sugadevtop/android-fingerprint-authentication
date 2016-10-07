@@ -9,7 +9,7 @@ import android.support.v4.hardware.fingerprint.FingerprintManagerCompat;
 /**
  * Created by Keval on 07-Oct-16.
  *
- * @author {@link 'https://github.com/kevalpatel2106'}
+ * @author 'https://github.com/kevalpatel2106'
  */
 
 public class FingerPrintUtils {

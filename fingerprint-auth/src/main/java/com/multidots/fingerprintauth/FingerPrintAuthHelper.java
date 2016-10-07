@@ -32,7 +32,7 @@ import javax.crypto.SecretKey;
  * Created by Keval on 07-Oct-16.<p>
  * This class will authenticate user with finger print.
  *
- * @author {@link 'https://github.com/kevalpatel2106'}
+ * @author 'https://github.com/kevalpatel2106'
  */
 @TargetApi(Build.VERSION_CODES.M)
 public class FingerPrintAuthHelper extends FingerprintManager.AuthenticationCallback {

@@ -3,7 +3,7 @@ package com.multidots.fingerprintauth;
 /**
  * Created by Keval on 07-Oct-16.
  *
- * @author {@link 'https://github.com/kevalpatel2106'}
+ * @author 'https://github.com/kevalpatel2106'
  */
 
 public class AuthErrorCodes {
@@ -14,7 +14,7 @@ public class AuthErrorCodes {
      * This error can be fixed by the user. Developer should display the error message to the screen to guide
      * user how to fix the error.
      *
-     * @see 'https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.AuthenticationCallback.html#onAuthenticationHelp(int, java.lang.CharSequence)'
+     * See:'https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.AuthenticationCallback.html#onAuthenticationHelp(int, java.lang.CharSequence)'
      */
     public static final int RECOVERABLE_ERROR = 843;
 
@@ -24,14 +24,14 @@ public class AuthErrorCodes {
      * Developer can stop the finger print scanning whenever this error occur and display the message received in callback.
      * Developer should use any other way of authenticating the user, like pin or password to authenticate the user.
      *
-     * @see 'https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.AuthenticationCallback.html#onAuthenticationError(int, java.lang.CharSequence)'
+     * See:'https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.AuthenticationCallback.html#onAuthenticationError(int, java.lang.CharSequence)'
      */
     public static final int NON_RECOVERABLE_ERROR = 566;
 
     /**
      * Called when a fingerprint is valid but not recognized.
      *
-     * @see 'https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.AuthenticationCallback.html#onAuthenticationError(int, java.lang.CharSequence)'
+     * See:'https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.AuthenticationCallback.html#onAuthenticationError(int, java.lang.CharSequence)'
      */
     public static final int CANNOT_RECOGNIZE_ERROR = 456;
 }
