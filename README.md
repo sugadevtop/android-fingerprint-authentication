@@ -1,1 +1,3 @@
-# android-fingerprint-authentication
+# Fingerprint Authentication Helper
+
+
