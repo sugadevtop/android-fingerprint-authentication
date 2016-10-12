@@ -1,3 +1,5 @@
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Finger%20Print%20Auth%20Helper-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/4493)
+
 # Fingerprint Authentication Helper
 
 Finger print authentication helper is an android library to simplify the authentication with finger print process. This will provide a common 
