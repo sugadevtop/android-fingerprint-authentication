@@ -1,4 +1,4 @@
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Finger%20Print%20Auth%20Helper-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/4493)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Finger%20Print%20Auth%20Helper-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/4493) [ ![Download](https://api.bintray.com/packages/multidots/md-maven/fingerprint-auth/images/download.svg) ](https://bintray.com/multidots/md-maven/fingerprint-auth/_latestVersion)
 
 # Fingerprint Authentication Helper
 
