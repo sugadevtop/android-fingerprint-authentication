@@ -96,4 +96,4 @@ Here is the link to the [demo](/apk/sample.apk) application.
 2. Make required changes and commit. 
 3. Generate pull request. Mention all the required description regarding changes you made.
 
-
+###[Medium Article](https://medium.com/@multidots/authenticate-your-user-with-fingerprint-de876618ce8d)
