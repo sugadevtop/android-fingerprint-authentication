@@ -12,7 +12,7 @@ platform for finger print authentication for all the android versions.
 - Add the dependencies to your app level build.gradle file:
 ```
 dependencies {
-    compile 'com.multidots:fingerprint-auth:1.0'
+    compile 'com.multidots:fingerprint-auth:1.0.1'
 }
 ```
 
