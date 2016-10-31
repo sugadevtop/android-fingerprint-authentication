@@ -16,37 +16,37 @@
 #   public *;
 #}
 # Keep name of all the classes
--keepnames class ** { *; }
-
--dontskipnonpubliclibraryclasses
--forceprocessing
--optimizationpasses 5
--verbose
-
-#support -v7 design lib
--dontwarn android.support.design.**
--keep class android.support.design.** { *; }
--keep interface android.support.design.** { *; }
--keep public class android.support.design.R$* { *; }
-
--keep class !android.support.v7.internal.view.menu.**,android.support.** {*;}
-
-#Keep anotations there
--keepattributes *Annotation*
-
-#Glide proguard config.
-#see: 'https://github.com/bumptech/glide'
--keep public class * implements com.bumptech.glide.module.GlideModule
--keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
-  **[] $VALUES;
-  public *;
-}
-
-#remove log class
--assumenosideeffects class android.util.Log {
-    public static *** d(...);
-    public static *** v(...);
-    public static *** i(...);
-    public static *** w(...);
-    public static *** e(...);
-}
+#-keepnames class ** { *; }
+#
+#-dontskipnonpubliclibraryclasses
+#-forceprocessing
+#-optimizationpasses 5
+#-verbose
+#
+##support -v7 design lib
+#-dontwarn android.support.design.**
+#-keep class android.support.design.** { *; }
+#-keep interface android.support.design.** { *; }
+#-keep public class android.support.design.R$* { *; }
+#
+#-keep class !android.support.v7.internal.view.menu.**,android.support.** {*;}
+#
+##Keep anotations there
+#-keepattributes *Annotation*
+#
+##Glide proguard config.
+##see: 'https://github.com/bumptech/glide'
+#-keep public class * implements com.bumptech.glide.module.GlideModule
+#-keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
+#  **[] $VALUES;
+#  public *;
+#}
+#
+##remove log class
+#-assumenosideeffects class android.util.Log {
+#    public static *** d(...);
+#    public static *** v(...);
+#    public static *** i(...);
+#    public static *** w(...);
+#    public static *** e(...);
+#}

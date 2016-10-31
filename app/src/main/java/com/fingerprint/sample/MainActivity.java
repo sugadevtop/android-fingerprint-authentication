@@ -21,7 +21,6 @@ import com.multidots.fingerprintauth.FingerPrintUtils;
 public class MainActivity extends AppCompatActivity implements FingerPrintAuthCallback {
 
     private TextView mAuthMsgTv;
-    private EditText mPinEt;
     private ViewSwitcher mSwitcher;
     private Button mGoToSettingsBtn;
     private FingerPrintAuthHelper mFingerPrintAuthHelper;
@@ -41,8 +40,9 @@ public class MainActivity extends AppCompatActivity implements FingerPrintAuthCa
 
         mSwitcher = (ViewSwitcher) findViewById(R.id.main_switcher);
         mAuthMsgTv = (TextView) findViewById(R.id.auth_message_tv);
-        mPinEt = (EditText) findViewById(R.id.pin_et);
-        mPinEt.addTextChangedListener(new TextWatcher() {
+
+        EditText pinEt = (EditText) findViewById(R.id.pin_et);
+        pinEt.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
