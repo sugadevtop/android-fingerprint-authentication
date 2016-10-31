@@ -10,6 +10,7 @@ import android.security.keystore.KeyPermanentlyInvalidatedException;
 import android.security.keystore.KeyProperties;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v4.hardware.fingerprint.FingerprintManagerCompat;
 
 import java.io.IOException;
@@ -34,8 +35,7 @@ import javax.crypto.SecretKey;
  *
  * @author 'https://github.com/kevalpatel2106'
  */
-@TargetApi(Build.VERSION_CODES.M)
-public class FingerPrintAuthHelper extends FingerprintManager.AuthenticationCallback {
+public class FingerPrintAuthHelper {
     private static final String KEY_NAME = UUID.randomUUID().toString();
 
     //error messages
@@ -240,39 +240,43 @@ public class FingerPrintAuthHelper extends FingerprintManager.AuthenticationCall
         } else {
             mCancellationSignal = new CancellationSignal();
             //noinspection MissingPermission
-            fingerprintManager.authenticate(cryptoObject, mCancellationSignal, 0, this, null);
+            fingerprintManager.authenticate(cryptoObject,
+                    mCancellationSignal,
+                    0,
+                    new FingerprintManager.AuthenticationCallback() {
+                        @Override
+                        public void onAuthenticationError(int errMsgId, CharSequence errString) {
+                            mCallback.onAuthFailed(AuthErrorCodes.NON_RECOVERABLE_ERROR, errString.toString());
+                        }
+
+                        @Override
+                        public void onAuthenticationHelp(int helpMsgId, CharSequence helpString) {
+                            mCallback.onAuthFailed(AuthErrorCodes.RECOVERABLE_ERROR, helpString.toString());
+                        }
+
+                        @Override
+                        public void onAuthenticationFailed() {
+                            mCallback.onAuthFailed(AuthErrorCodes.CANNOT_RECOGNIZE_ERROR, null);
+                        }
+
+                        @Override
+                        public void onAuthenticationSucceeded(FingerprintManager.AuthenticationResult result) {
+                            mCallback.onAuthSuccess(result.getCryptoObject());
+                        }
+                    }, null);
         }
     }
 
     /**
      * Stop the finger print authentication.
      */
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     public void stopAuth() {
         if (mCancellationSignal != null) {
             isScanning = true;
             mCancellationSignal.cancel();
             mCancellationSignal = null;
         }
-    }
-
-    @Override
-    public void onAuthenticationError(int errMsgId, CharSequence errString) {
-        mCallback.onAuthFailed(AuthErrorCodes.NON_RECOVERABLE_ERROR, errString.toString());
-    }
-
-    @Override
-    public void onAuthenticationHelp(int helpMsgId, CharSequence helpString) {
-        mCallback.onAuthFailed(AuthErrorCodes.RECOVERABLE_ERROR, helpString.toString());
-    }
-
-    @Override
-    public void onAuthenticationFailed() {
-        mCallback.onAuthFailed(AuthErrorCodes.CANNOT_RECOGNIZE_ERROR, null);
-    }
-
-    @Override
-    public void onAuthenticationSucceeded(FingerprintManager.AuthenticationResult result) {
-        mCallback.onAuthSuccess(result.getCryptoObject());
     }
 
     /**
