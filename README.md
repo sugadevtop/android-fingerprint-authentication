@@ -1,4 +1,4 @@
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Finger%20Print%20Auth%20Helper-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/4493) [ ![Download](https://api.bintray.com/packages/multidots/md-maven/fingerprint-auth/images/download.svg) ](https://bintray.com/multidots/md-maven/fingerprint-auth/_latestVersion) [![Size](https://img.shields.io/badge/Size-20 KB-e91e63.svg)](http://www.methodscount.com/?lib=com.multidots%3Afingerprint-auth%3A1.0)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Finger%20Print%20Auth%20Helper-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/4493) [ ![Download](https://api.bintray.com/packages/multidots/md-maven/fingerprint-auth/images/download.svg) ](https://bintray.com/multidots/md-maven/fingerprint-auth/_latestVersion) [![Size](https://img.shields.io/badge/Size-20 KB-e91e63.svg)](http://www.methodscount.com/?lib=com.multidots%3Afingerprint-auth%3A1.0) [![Build Status](https://travis-ci.org/multidots/android-fingerprint-authentication.svg?branch=master)](https://travis-ci.org/multidots/android-fingerprint-authentication)
 
 # Fingerprint Authentication Helper
 
