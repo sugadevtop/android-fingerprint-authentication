@@ -1,14 +1,14 @@
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Finger%20Print%20Auth%20Helper-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/4493) [ ![Download](https://api.bintray.com/packages/multidots/md-maven/fingerprint-auth/images/download.svg) ](https://bintray.com/multidots/md-maven/fingerprint-auth/_latestVersion) [![Size](https://img.shields.io/badge/Size-20 KB-e91e63.svg)](http://www.methodscount.com/?lib=com.multidots%3Afingerprint-auth%3A1.0) [![Build Status](https://travis-ci.org/multidots/android-fingerprint-authentication.svg?branch=master)](https://travis-ci.org/multidots/android-fingerprint-authentication)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Finger%20Print%20Auth%20Helper-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/4493) [ ![Download](https://api.bintray.com/packages/multidots/md-maven/fingerprint-auth/images/download.svg) ](https://bintray.com/multidots/md-maven/fingerprint-auth/_latestVersion) (http://www.methodscount.com/?lib=com.multidots%3Afingerprint-auth%3A1.0) [![Build Status](https://travis-ci.org/multidots/android-fingerprint-authentication.svg?branch=master)](https://travis-ci.org/multidots/android-fingerprint-authentication)
 
 # Fingerprint Authentication Helper
 
 Finger print authentication helper is an android library to simplify the authentication with finger print process. This will provide a common 
 platform for finger print authentication for all the android versions.
 
-##Screenshot
+## Screenshot
 ![Authentication Demo](/screens/screen-capture.gif)
 
-##Dependency
+## Dependency
 - Add the dependencies to your app level build.gradle file:
 ```
 dependencies {
@@ -16,7 +16,7 @@ dependencies {
 }
 ```
 
-##Usage
+## Usage
 - Inside your activity or fragment create `FingerPrintAuthHelper` instance and call `startAuth()` in the `onResume()` to enable finger print scanning.
 ```
 @Override
@@ -43,7 +43,7 @@ protected void onPause() {
 }
 ```
 
-**Callbacks**
+** Callbacks **
 
 - You need to implement *FingerPrintAuthCallback* in your activity/fragment to receive the callbacks from the helper class.
 ```
@@ -83,17 +83,17 @@ public void onAuthFailed(int errorCode, String errorMessage) {
 }
 ```
 
-##Demo application
+## Demo application
 Here is the link to the [demo](/apk/sample.apk) application.
 
-##Questions?
+## Questions?
 - If you have some problems with using this library or something doesn't work correctly, feel free to open an [issue](https://github.com/multidots/android-fingerprint-authentication/issues/new).
 
-##How to contribute?
-####Simple 3 step to contribute into this repo:
+## How to contribute?
+#### Simple 3 step to contribute into this repo:
 
 1. Fork the project. 
 2. Make required changes and commit. 
 3. Generate pull request. Mention all the required description regarding changes you made.
 
-###[Medium Article](https://medium.com/@multidots/authenticate-your-user-with-fingerprint-de876618ce8d)
+### [Medium Article](https://medium.com/@multidots/authenticate-your-user-with-fingerprint-de876618ce8d)
