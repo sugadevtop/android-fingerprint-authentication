@@ -47,5 +47,5 @@ public interface FingerPrintAuthCallback {
      * @param errorMessage A human-readable error string that can be shown in UI
      * @see AuthErrorCodes
      */
-    void onAuthFailed(int errorCode, String errorMessage);
+    void onAuthFailed(int originErrorCode, int errorCode, String errorMessage);
 }

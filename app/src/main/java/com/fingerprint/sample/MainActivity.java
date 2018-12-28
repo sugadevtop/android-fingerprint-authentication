@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements FingerPrintAuthCa
     }
 
     @Override
-    public void onAuthFailed(int errorCode, String errorMessage) {
+    public void onAuthFailed(int originErrorCode, int errorCode, String errorMessage) {
         switch (errorCode) {
             case AuthErrorCodes.CANNOT_RECOGNIZE_ERROR:
                 mAuthMsgTv.setText("Cannot recognize your finger print. Please try again.");

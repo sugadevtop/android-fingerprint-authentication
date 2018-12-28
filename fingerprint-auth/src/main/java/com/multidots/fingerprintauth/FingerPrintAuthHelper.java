@@ -183,7 +183,7 @@ public class FingerPrintAuthHelper {
         boolean isKeyGenerated = generateKey();
 
         if (!isKeyGenerated) {
-            mCallback.onAuthFailed(AuthErrorCodes.NON_RECOVERABLE_ERROR, ERROR_FAILED_TO_GENERATE_KEY);
+            mCallback.onAuthFailed(0, AuthErrorCodes.NON_RECOVERABLE_ERROR, ERROR_FAILED_TO_GENERATE_KEY);
             return false;
         }
 
@@ -194,7 +194,7 @@ public class FingerPrintAuthHelper {
                             + KeyProperties.ENCRYPTION_PADDING_PKCS7);
         } catch (NoSuchAlgorithmException |
                 NoSuchPaddingException e) {
-            mCallback.onAuthFailed(AuthErrorCodes.NON_RECOVERABLE_ERROR, ERROR_FAILED_TO_GENERATE_KEY);
+            mCallback.onAuthFailed(0, AuthErrorCodes.NON_RECOVERABLE_ERROR, ERROR_FAILED_TO_GENERATE_KEY);
             return false;
         }
 
@@ -204,12 +204,12 @@ public class FingerPrintAuthHelper {
             mCipher.init(Cipher.ENCRYPT_MODE, key);
             return true;
         } catch (KeyPermanentlyInvalidatedException e) {
-            mCallback.onAuthFailed(AuthErrorCodes.NON_RECOVERABLE_ERROR, ERROR_FAILED_TO_INIT_CHIPPER);
+            mCallback.onAuthFailed(0, AuthErrorCodes.NON_RECOVERABLE_ERROR, ERROR_FAILED_TO_INIT_CHIPPER);
             return false;
         } catch (KeyStoreException | CertificateException
                 | UnrecoverableKeyException | IOException
                 | NoSuchAlgorithmException | InvalidKeyException e) {
-            mCallback.onAuthFailed(AuthErrorCodes.NON_RECOVERABLE_ERROR, ERROR_FAILED_TO_INIT_CHIPPER);
+            mCallback.onAuthFailed(0, AuthErrorCodes.NON_RECOVERABLE_ERROR, ERROR_FAILED_TO_INIT_CHIPPER);
             return false;
         }
     }
@@ -236,7 +236,7 @@ public class FingerPrintAuthHelper {
 
         FingerprintManager.CryptoObject cryptoObject = getCryptoObject();
         if (cryptoObject == null) {
-            mCallback.onAuthFailed(AuthErrorCodes.NON_RECOVERABLE_ERROR, ERROR_FAILED_TO_INIT_CHIPPER);
+            mCallback.onAuthFailed(0, AuthErrorCodes.NON_RECOVERABLE_ERROR, ERROR_FAILED_TO_INIT_CHIPPER);
         } else {
             mCancellationSignal = new CancellationSignal();
             //noinspection MissingPermission
@@ -246,17 +246,17 @@ public class FingerPrintAuthHelper {
                     new FingerprintManager.AuthenticationCallback() {
                         @Override
                         public void onAuthenticationError(int errMsgId, CharSequence errString) {
-                            mCallback.onAuthFailed(AuthErrorCodes.NON_RECOVERABLE_ERROR, errString.toString());
+                            mCallback.onAuthFailed(errMsgId, AuthErrorCodes.NON_RECOVERABLE_ERROR, errString.toString());
                         }
 
                         @Override
                         public void onAuthenticationHelp(int helpMsgId, CharSequence helpString) {
-                            mCallback.onAuthFailed(AuthErrorCodes.RECOVERABLE_ERROR, helpString.toString());
+                            mCallback.onAuthFailed(helpMsgId, AuthErrorCodes.RECOVERABLE_ERROR, helpString.toString());
                         }
 
                         @Override
                         public void onAuthenticationFailed() {
-                            mCallback.onAuthFailed(AuthErrorCodes.CANNOT_RECOGNIZE_ERROR, null);
+                            mCallback.onAuthFailed(0, AuthErrorCodes.CANNOT_RECOGNIZE_ERROR, null);
                         }
 
                         @Override
